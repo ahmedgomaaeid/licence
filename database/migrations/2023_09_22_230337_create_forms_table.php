@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('nationality');
             $table->bigInteger('job_number');
             $table->string('job');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->string('start_date');
+            $table->string('end_date');
             $table->string('operation_admin');
             $table->timestamps();
         });

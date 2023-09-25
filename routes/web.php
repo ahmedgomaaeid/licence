@@ -20,8 +20,9 @@ Route::group(['middleware' => 'guest:web'], function () {
     Route::post('/register',[App\Http\Controllers\UserController::class, 'postRegister'])->name('register.post');
     Route::get('/',[App\Http\Controllers\UserController::class, 'index'])->name('index');
 });
-Route::group(['middleware' => 'auth:web'], function () {
+Route::group(['middleware' => ['auth:web', 'user.auth']], function () {
     Route::get('/home',[App\Http\Controllers\UserController::class, 'home'])->name('home');
+    Route::post('/add-form',[App\Http\Controllers\UserController::class, 'addForm'])->name('add.form');
     Route::get('/logout',[App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 });
 
@@ -43,6 +44,7 @@ Route::prefix('admin')->group(function (){
         Route::get('/security',[App\Http\Controllers\AdminController::class, 'security'])->name('admin.security');
         Route::post('/add-security',[App\Http\Controllers\AdminController::class, 'addSecurity'])->name('admin.add.security');
         Route::get('/delete-security/{id}',[App\Http\Controllers\AdminController::class, 'deleteSecurity'])->name('admin.delete.security');
+        Route::get('/forms',[App\Http\Controllers\AdminController::class, 'forms'])->name('admin.forms');
         Route::get('/logout',[App\Http\Controllers\AdminController::class, 'logout'])->name('admin.logout');
     });
 });

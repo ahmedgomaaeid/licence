@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
 use App\Models\Operation;
 use App\Models\Security;
 use App\Models\User;
@@ -94,6 +95,11 @@ class AdminController extends Controller
         $security = Security::find($id);
         $security->delete();
         return redirect()->back()->with('success', 'تم الحذف بنجاح');
+    }
+    public function forms()
+    {
+        $forms = Form::all();
+        return view('admin.forms', compact('forms'));
     }
 
 }

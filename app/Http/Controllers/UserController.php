@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
 use App\Models\Operation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -46,7 +47,7 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->operation_id = $request->operation_id;
         $user->save();
-        return redirect()->route('login')->with('success', 'تم تسجيل الحساب بنجاح');
+        return redirect()->route('login')->with('err', 'يرجى الانتظار حتى يتم الموافقة على طلبك');
     }
     public function home()
     {
@@ -54,6 +55,32 @@ class UserController extends Controller
         //count number of forms
         $forms = $user->forms->count();
         return view('user.home', compact('user', 'forms'));
+    }
+    public function addForm(Request $request)
+    {
+        $request->validate([
+            'type' => 'required',
+            'reson' => 'required',
+            'nationality' => 'required',
+            'job' => 'required',
+            'job_number' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'operation_admin' => 'required',
+        ]);
+        $user = auth()->guard('web')->user();
+        $form = new Form();
+        $form->type = $request->type;
+        $form->reson = $request->reson;
+        $form->user_id = $user->id;
+        $form->nationality = $request->nationality;
+        $form->job = $request->job;
+        $form->job_number = $request->job_number;
+        $form->start_date = $request->start_date;
+        $form->end_date = $request->end_date;
+        $form->operation_admin = $request->operation_admin;
+        $form->save();
+        return redirect()->back()->with('success', 'تم ارسال الطلب بنجاح');
     }
     public function logout()
     {
