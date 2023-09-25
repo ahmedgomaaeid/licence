@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    width: 100%;
+}
+#main
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.main-banner .left-content {
+    margin-right: 45px;
+}
+.main-banner .left-content h2 {
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    padding-top: 20px;
+    margin-bottom: 45px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #2a2a2a;
+    line-height: 72px;
+    background: #55b94a;
+    background: -webkit-linear-gradient(to right, #f58530 0%, #55b94a 100%);
+    background: -moz-linear-gradient(to right, #f58530 0%, #55b94a 100%);
+    background: linear-gradient(to right, #f58530 0%, #55b94a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.main-banner .right-image {
+    text-align: right;
+    position: relative;
+    z-index: 2;
+}
+.main-banner .right-image img {
+    max-width: 593px;
+}
+img {
+    width: 100%;
+    overflow: hidden;
+}
+.main-banner:before {
+    content: '';
+    background-image: url(../imgs/banner-dec-right.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 1159px;
+    height: 797px;
+    z-index: -1;
+}
+.main-banner:after {
+    content: '';
+    background-image: url(../imgs/banner-dec-left.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 212px;
+    height: 653px;
+    z-index: -1;
+}
+
+.nav-bar
+{
+    width: 100%;
+    background-color: #16365d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar .logo
+{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 130px;
+}
+
+.title
+{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-top: 10%;
+}
+.sign-but
+{
+    width: 200px;
+    height: 50px;
+    background-color: #55b94a;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px)
+{
+    .nav-bar .logo
+    {
+        width: 200px;
+    }
+    .nav-bar .nav-links
+    {
+        width: 300px;
+    }
+    .nav-bar .nav-links a
+    {
+        font-size: 15px;
+    }
+    .title
+    {
+        font-size: 30px;
+    }
+    .btn
+    {
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+    }
+}

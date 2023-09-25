@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('reson');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('nationality');
-            $table->integer('job_number');
+            $table->bigInteger('job_number');
             $table->string('job');
             $table->date('start_date');
             $table->date('end_date');

@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #16365d;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+.container {
+    width: 90%;
+    height: 85%;
+    background: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow:auto;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 10px 0;
+    background-color: #16365d;
+}
+.title_div {
+    position: relative;
+    margin: auto;
+    padding:5px;
+    padding-top: 20px;
+    width: 80%;
+    display: flex;
+    color:#162A4B;
+}
+.Lable_Mine {
+    font-family: MOH;
+    color: #69bf4a;
+    font-size:large;
+}
+.Sup_Title {
+    font-family: MOH;
+    color: #062a43;
+    font-size:medium;
+}
+.Title_Filed {
+    margin-top:5px;
+    font-family: MOH;
+    color: #062a43;
+    font-size: medium;
+}
+.Title_Textbox {
+    font-family: MOH;
+    color: #062a43;
+    font-size: medium;
+}
+.Textbox_Css_MultiLine {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    padding: 5px;
+    font-family:MOH;
+}
+.user_forms {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    border-radius: 20px;
+    display: flex;
+}
+.main-user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.user-input-button {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
+    padding-bottom: 5px;
+
+}
+
+.user-input-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 49%;
+    padding-bottom: 5px;
+}
+
+    .user-input-box label {
+        width: 100%;
+        color: #175c2d;
+        font-size: 15px;
+        font-weight: 400;
+        margin: 5px 0;
+    }
+
+    .user-input-box input {
+        height: 40px;
+        width: 95%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+    }
+    .user-input-box select {
+        height: 40px;
+        width: 95%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+    }
+
+    .Dropdownlist {
+        height: 40px;
+        width: 100%;
+        border-radius: 7px;
+        background-color:#fff;
+        color:#162A4B;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+        font-family:MOH;
+    }
+.error_ms {
+    font-size: 10px;
+    color: #e30000;
+}
+.gender-category label {
+    padding: 0 20px 0 5px;
+}
+
+    .gender-category label,
+    .gender-category input,
+    .form-submit-btn input {
+        cursor: pointer;
+    }
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    border-radius: 14px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+    font-family: MOH;
+}
+
+.button1 {
+    background-color: #55b94a;
+    color: white;
+}
+
+    .button1:hover {
+        background-color: #145e0c;
+        color: white;
+        width: 100%;
+    }
+.button2 {
+    background-color: #062a43;
+    color: white;
+}
+
+    .button2:hover {
+        color: white;
+        width: 100%;
+    }
+@media(max-width: 600px) {
+    .container {
+        min-width: 300px;
+
+    }
+
+    .user-input-box {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+        .user-input-box:nth-child(2n) {
+            justify-content: space-between;
+        }
+
+    .gender-category {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .main-user-info {
+        max-height: 100%;
+        overflow: auto;
+    }
+
+        .main-user-info::-webkit-scrollbar {
+            width: 0;
+
+        }
+
+}

@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('nId');
-            $table->integer('phone');
+            $table->bigInteger('nId');
+            $table->bigInteger('phone');
             $table->string('email')->unique();
             $table->string('password');
             $table->foreignId('operation_id')->constrained('operations')->onDelete('cascade');
+            $table->boolean('admin_approve')->default(false);
+            $table->boolean('operation_approve')->default(false);
             $table->timestamps();
         });
     }
